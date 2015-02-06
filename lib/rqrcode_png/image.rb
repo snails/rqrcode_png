@@ -4,8 +4,8 @@ module RQRCodePNG
     WHITE = ::ChunkyPNG::Color::WHITE	
     TRANSPARENT = ::ChunkyPNG::Color::TRANSPARENT	
 
-    def initialize(qr_code)
-      @sequence = Sequence.new(qr_code)
+    def initialize(qr_code, opts = {})
+      @sequence = Sequence.new(qr_code, opts)
     end
 
     # Returns an image file of the QR Code

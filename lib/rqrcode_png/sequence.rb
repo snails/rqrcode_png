@@ -1,7 +1,8 @@
 module RQRCodePNG
   class Sequence
-    def initialize(qr_code)
+    def initialize(qr_code, opts = {})
       @qr_code = qr_code
+      @border = opts[:border] || (img_size() / 10)
     end
 
     # This method yields the vertices of the dark squares
