@@ -11,8 +11,12 @@ rqrcode_png extends [rqrcode](https://github.com/whomwah/rqrcode), adding one si
 ```ruby
 require 'rqrcode_png'
 
-qr = RQRCode::QRCode.new( 'my string to generate', :size => 4, :level => :h )
-png = qr.to_img												# returns an instance of ChunkyPNG
+qr = RQRCode::QRCode.new( 'my string to generate', :size => 4, :level => :h ) #:size is optional, the same is to :level
+ 
+ #You can set the background color and foreground color of the image, by passing a hash: {fg_color: ChunkyPNG::Color.rgb(233,233,233), border: 2, fg_color: BLACK}
+ 
+png = qr.to_img({ border: 2, fg_color: ChunkyPNG::Color.rgb(96, 96, 96) })												# returns an instance of ChunkyPNG
+
 png.resize(90, 90).save("really_cool_qr_image.png")
 ```
 
@@ -59,4 +63,5 @@ end
 
 ## Copyright
 MIT Licence (http://www.opensource.org/licenses/mit-license.html)
+
 
